@@ -12,7 +12,7 @@ install_requires = [
     "djangorestframework-gis==0.14",
 ]
 
-dependency_links=['http://github.com/OpenUpSA/wazimap_sa_boundaries.git/tarball/master#egg=package-1.0']
+dependency_links=['http://github.com/OpenUpSA/explorer.git/tarball/0.6#egg=package-1.0']
 
 setup(
     name="sa_boundaries",
