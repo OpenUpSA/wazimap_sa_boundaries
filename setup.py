@@ -8,16 +8,16 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 install_requires = [
     "Django>=1.11.20,<2.0.0",
-    "djangorestframework>=3.9.1",
+    "djangorestframework==3.9.2",
     "djangorestframework-gis==0.14",
 ]
 
 dependency_links=['http://github.com/OpenUpSA/wazimap_sa_boundaries.git/tarball/master#egg=package-1.0']
 
 setup(
-    name="Wazimap SA Boundaries",
-    version="0.1",
-    packages=find_packages(exclude=["project"]),
+    name="sa_boundaries",
+    version="0.2",
+    packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,
     dependency_links=dependency_links,
@@ -27,6 +27,7 @@ setup(
     url="https://github.com/OpenUpSA/wazimap_sa_boundaries",
     author="OpenUp",
     author_email="adi@openup.org.za",
+    zip_safe=False,
     classifiers=[
         "Environment :: Web Environment",
         "Framework :: Django",
