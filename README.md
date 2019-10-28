@@ -7,7 +7,7 @@ Wazimap app adds provicial boundaries to the database. This is needed point poin
 1. Clone the code into the python path (usually inside your Django project). 
 2. Add sa_boundaries to your INSTALLED_APPS. 
 3. Load the province data into your database, e.g. 
-  3.1 gunzip fixtures/provinces.json.gz
-  3.2 python manage.py loaddata fixtures/provinces.json
+  - gunzip fixtures/provinces.json.gz
+  - python manage.py loaddata fixtures/provinces.json
 
 You may need to tweak these instructions to work with your setup
