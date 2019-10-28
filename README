@@ -1,0 +1,3 @@
+== SA Boundaries Wazimap App ==
+
+Wazimap app adds provicial boundaries to the database. This is needed point point in polygon searches, e.g. find all points in this province. This app was development together with Explorer and is dependent on it. In future this dependency might be removed. Additional boundaries (e.g. municipality, district, etc) will also be added.
