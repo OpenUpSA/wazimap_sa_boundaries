@@ -10,6 +10,7 @@ from django.http import JsonResponse
 from models import Province
 from rest_framework.response import Response
 import csv
+import utils
 from StringIO import StringIO
 
 
@@ -18,22 +19,7 @@ class GISCSVRenderer(renderers.BaseRenderer):
     format = 'csv'
 
     def render(self, data, media_type=None, renderer_context=None):
-        fp = StringIO()
-        writer = csv.writer(fp)
-        for idx, feature in enumerate(data["features"]):
-            headers = ["latitude", "longitude"]
-            vals = []
-            properties = feature["properties"]["data"]
-            coordinates = feature["geometry"]["coordinates"]
-            vals += coordinates
-            for k, v in properties.items():
-                vals.append(("%s" % v).encode("utf8"))
-                headers.append(k)
-            if idx == 0:
-                writer.writerow(headers)
-            writer.writerow(vals)
-
-        return fp.getvalue()
+        return utils.points2csv(data)
 
 class CategoryProvinceView(APIView):
     renderer_classes = tuple(api_settings.DEFAULT_RENDERER_CLASSES) + (GISCSVRenderer, )
