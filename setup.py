@@ -8,7 +8,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 install_requires = [
     "Django>=1.11.20,<2.0.0",
-    "djangorestframework==3.9.2",
+    "djangorestframework==3.11.2",
     "djangorestframework-gis==0.14",
 ]
 
